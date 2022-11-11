@@ -325,7 +325,7 @@ textarea {
     width: 358px;
     margin-right: 12px;
     padding: 15px 16px;
-    background-color: var(--bg-color);
+    background-color: inherit;
     border: 1px solid var(--footer-input-border-color);
     box-shadow: var(--hero-button-shadow);
     border-radius: 4px;
@@ -335,6 +335,7 @@ textarea {
     display: inline-flex;
     align-items: center;
     padding: 10px 28px;
+    font-family: inherit;
     font-weight: 700;
     font-size: 16px;
     line-height: 1.88;
@@ -477,7 +478,6 @@ textarea {
 
 .modal-form {
     width: 100%;
-    outline: 1px solid red;
 }
 
 .modal-form p {
@@ -594,6 +594,9 @@ textarea {
     border: 2px solid var(--title-color);
     border-radius: 2px;
     cursor: pointer;
+    transition: border-color var(--duration) var(--timing-function),
+        background-image var(--duration) var(--timing-function),
+        background-color var(--duration) var(--timing-function);
 }
 
 .checkbox:checked + .icon-checkbox {
@@ -601,6 +604,7 @@ textarea {
     background-color: var(--accent-color);
     background-image: url(../images/check.svg);
     background-size: contain;
+    background-position: center;
     background-origin: border-box;
 }
 
