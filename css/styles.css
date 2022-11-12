@@ -325,6 +325,7 @@ textarea {
     width: 358px;
     margin-right: 12px;
     padding: 15px 16px;
+    color: var(--primary-white-color);
     background-color: inherit;
     border: 1px solid var(--footer-input-border-color);
     box-shadow: var(--hero-button-shadow);
@@ -347,6 +348,13 @@ textarea {
     border-radius: 4px;
     border-width: 0;
     cursor: pointer;
+
+    transition: background-color var(--duration) var(--timing-function);
+}
+
+.footer-button:hover,
+.footer-button:focus {
+    background-color: var(--hover-hero-button);
 }
 
 .icon-send {
@@ -544,14 +552,9 @@ textarea {
 }
 
 .form-comment textarea {
+    height: 120px;
     padding: 12px 16px;
-    font-family: inherit;
-    font-size: 12px;
-    line-height: 1.17;
-    letter-spacing: 0.01em;
-
-    color: rgba(117, 117, 117, 0.5);
-
+    resize: none;
     border: 1px solid var(--input-border-color);
     border-radius: 4px;
     transition: border-color var(--duration) var(--timing-function);
@@ -609,7 +612,30 @@ textarea {
 }
 
 .policy-link {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
     color: var(--accent-color);
+    /* outline: 1px solid red; */
+}
+
+.policy-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform var(--duration) var(--timing-function);
+}
+
+.policy-link:hover::after,
+.policy-link:focus::after {
+    transform: scaleX(1);
 }
 
 .modal-button {
